@@ -31,7 +31,7 @@ def get_lyrics(artist):
         res = requests.get(f"https://www.uta-net.com{num}/0/{p+1}/")
         soup = BeautifulSoup(res.text, "html.parser")
         for i in soup.select(".border-bottom"):
-            for j in i.select(".sp-w-100.pt-2"):
+            for j in i.select(".sp-w-100.pt-0.pt-lg-2"):
                 song = j.select_one("a").get_text()
                 song_id = j.select_one("a").get("href")
                 songs.append(song_id)
